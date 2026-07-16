@@ -456,3 +456,308 @@
     padding: 6rem 0;
   }
 }
+
+/* =========================
+   ÍNDICE DE ARCHIVOS
+   ========================= */
+
+.archive-index {
+  padding: 9rem 0 3rem;
+  border-top: 1px solid var(--line);
+}
+
+.archive-entry {
+  display: grid;
+  grid-template-columns:
+    minmax(360px, 1.1fr)
+    minmax(280px, 0.9fr);
+  align-items: center;
+  gap: clamp(3rem, 8vw, 8rem);
+
+  padding: 7rem 0;
+
+  border-top: 1px solid var(--line);
+}
+
+.archive-entry:nth-of-type(even) .archive-entry__visual {
+  order: 2;
+}
+
+.archive-entry__visual {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  min-height: 460px;
+  padding: 2rem;
+
+  overflow: hidden;
+
+  color: var(--muted-text);
+  border: 1px solid var(--line);
+
+  background:
+    radial-gradient(
+      circle at 25% 20%,
+      color-mix(in srgb, var(--accent), transparent 88%),
+      transparent 32%
+    ),
+    var(--surface);
+
+  text-align: center;
+  text-decoration: none;
+}
+
+.archive-entry__visual::before,
+.archive-entry__visual::after {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 130%;
+  height: 1px;
+
+  background: var(--line);
+}
+
+.archive-entry__visual::before {
+  transform: translate(-50%, -50%) rotate(35deg);
+}
+
+.archive-entry__visual::after {
+  transform: translate(-50%, -50%) rotate(-35deg);
+}
+
+.archive-entry__visual span {
+  position: relative;
+  z-index: 1;
+
+  max-width: 280px;
+  padding: 0.8rem 1rem;
+
+  background: var(--surface);
+
+  font-size: 0.8rem;
+}
+
+a.archive-entry__visual:hover,
+a.archive-entry__visual:focus-visible {
+  border-color: var(--accent);
+}
+
+.archive-entry__number {
+  margin: 0 0 1.25rem;
+
+  color: var(--accent);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.archive-entry h3 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.archive-entry blockquote {
+  margin: 2.5rem 0;
+  padding-left: 1.5rem;
+
+  border-left: 1px solid var(--accent);
+
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.9rem);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.archive-entry__copy > p:not(.archive-entry__number) {
+  max-width: 570px;
+
+  color: var(--muted-text);
+}
+
+.archive-entry__status {
+  display: inline-block;
+  margin-top: 1.5rem;
+
+  color: var(--muted-text);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.archive-entry--pending {
+  opacity: 0.72;
+}
+
+
+/* =========================
+   EXPEDIENTE DESTACADO
+   ========================= */
+
+.featured-dossier {
+  display: grid;
+  grid-template-columns:
+    minmax(280px, 0.85fr)
+    minmax(400px, 1.15fr);
+  align-items: center;
+  gap: clamp(3rem, 8vw, 8rem);
+
+  padding: 10rem 0;
+
+  border-top: 1px solid var(--line);
+}
+
+.featured-dossier h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 9vw, 8rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+
+.featured-dossier blockquote {
+  margin: 2.5rem 0;
+  padding-left: 1.5rem;
+
+  border-left: 1px solid var(--accent);
+
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.featured-dossier__copy > p {
+  max-width: 590px;
+
+  color: var(--muted-text);
+}
+
+.featured-dossier__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+
+  margin-top: 2rem;
+}
+
+.featured-dossier__visual {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  min-height: 600px;
+  padding: 2rem;
+
+  overflow: hidden;
+
+  color: var(--muted-text);
+  border: 1px solid var(--line);
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      color-mix(in srgb, var(--accent), transparent 82%),
+      transparent 35%
+    ),
+    var(--surface);
+
+  text-align: center;
+  text-decoration: none;
+}
+
+.featured-dossier__visual::after {
+  content: "";
+
+  position: absolute;
+
+  width: 65%;
+  aspect-ratio: 1;
+
+  border: 1px solid var(--line);
+  border-radius: 50%;
+
+  opacity: 0.4;
+}
+
+.featured-dossier__visual span {
+  position: relative;
+  z-index: 1;
+
+  max-width: 280px;
+  padding: 0.8rem 1rem;
+
+  background: var(--surface);
+
+  font-size: 0.8rem;
+}
+
+.featured-dossier__visual:hover,
+.featured-dossier__visual:focus-visible {
+  border-color: var(--accent);
+}
+
+
+/* =========================
+   ADAPTACIÓN DEL ARCHIVO
+   ========================= */
+
+@media (max-width: 950px) {
+  .archive-entry,
+  .featured-dossier {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-entry:nth-of-type(even) .archive-entry__visual {
+    order: initial;
+  }
+
+  .archive-entry__visual {
+    min-height: 380px;
+  }
+
+  .featured-dossier__visual {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 640px) {
+  .archive-index {
+    padding-top: 6rem;
+  }
+
+  .archive-entry {
+    gap: 2.5rem;
+    padding: 5rem 0;
+  }
+
+  .archive-entry__visual {
+    min-height: 290px;
+  }
+
+  .featured-dossier {
+    gap: 3rem;
+    padding: 6rem 0;
+  }
+
+  .featured-dossier__visual {
+    min-height: 360px;
+  }
+}
