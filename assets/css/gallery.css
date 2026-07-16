@@ -761,3 +761,478 @@ a.archive-entry__visual:focus-visible {
     min-height: 360px;
   }
 }
+
+
+/* =========================
+   DIRECTORIO DE CRIATURAS
+   ========================= */
+
+.creature-directory {
+  padding: 9rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.creature-directory__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.creature-directory__list li {
+  border-bottom: 1px solid var(--line);
+}
+
+.creature-directory__list a,
+.creature-directory__list li > div {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: center;
+  gap: 2rem;
+
+  min-height: 110px;
+  padding: 1.5rem 0;
+
+  text-decoration: none;
+}
+
+.creature-directory__number {
+  color: var(--accent);
+
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+
+.creature-directory__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.7rem);
+  line-height: 1.1;
+}
+
+.creature-directory__status {
+  color: var(--muted-text);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.creature-directory__list a:hover
+.creature-directory__name,
+.creature-directory__list a:focus-visible
+.creature-directory__name {
+  color: var(--accent);
+}
+
+.creature-directory__pending {
+  opacity: 0.5;
+}
+
+
+/* =========================
+   EXPEDIENTE DE CRIATURA
+   ========================= */
+
+.creature-record {
+  display: grid;
+  grid-template-columns:
+    minmax(380px, 1.1fr)
+    minmax(300px, 0.9fr);
+  align-items: start;
+  gap: clamp(3rem, 8vw, 8rem);
+
+  padding: 10rem 0;
+
+  border-top: 1px solid var(--line);
+}
+
+.creature-record__visual {
+  position: sticky;
+  top: 9rem;
+}
+
+.creature-record__visual > a {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  min-height: 650px;
+  padding: 2rem;
+
+  overflow: hidden;
+
+  color: var(--muted-text);
+  border: 1px solid var(--line);
+
+  background:
+    radial-gradient(
+      circle at 50% 38%,
+      color-mix(in srgb, var(--accent), transparent 80%),
+      transparent 30%
+    ),
+    var(--surface);
+
+  text-align: center;
+  text-decoration: none;
+}
+
+.creature-record__visual > a::before {
+  content: "";
+
+  position: absolute;
+
+  width: 55%;
+  aspect-ratio: 1;
+
+  border: 1px solid var(--line);
+  border-radius: 48% 52% 42% 58%;
+
+  opacity: 0.45;
+
+  transform: rotate(17deg);
+}
+
+.creature-record__visual > a::after {
+  content: "";
+
+  position: absolute;
+
+  width: 38%;
+  aspect-ratio: 1;
+
+  border: 1px solid var(--accent);
+  border-radius: 52% 48% 60% 40%;
+
+  opacity: 0.3;
+
+  transform: rotate(-23deg);
+}
+
+.creature-record__visual span {
+  position: relative;
+  z-index: 1;
+
+  max-width: 260px;
+  padding: 0.8rem 1rem;
+
+  background: var(--surface);
+
+  font-size: 0.8rem;
+}
+
+.creature-record__visual > a:hover,
+.creature-record__visual > a:focus-visible {
+  border-color: var(--accent);
+}
+
+.creature-record__caption {
+  margin: 0.8rem 0 0;
+
+  color: var(--muted-text);
+
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.creature-record__classification {
+  margin: 0 0 1.5rem;
+
+  color: var(--accent);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.creature-record h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.05em;
+}
+
+.creature-record blockquote {
+  margin: 3rem 0;
+  padding-left: 1.5rem;
+
+  border-left: 1px solid var(--accent);
+
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.creature-record__copy > p:not(
+  .creature-record__classification
+) {
+  color: var(--muted-text);
+}
+
+.creature-record__details {
+  margin: 3rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.creature-record__details div {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 2rem;
+
+  padding: 1.25rem 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.creature-record__details dt {
+  color: var(--accent);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.creature-record__details dd {
+  margin: 0;
+
+  color: var(--muted-text);
+}
+
+.creature-record__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+
+  margin-top: 3rem;
+}
+
+
+/* =========================
+   FUTUROS EXPEDIENTES
+   ========================= */
+
+.future-records {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 8vw, 8rem);
+
+  padding: 10rem 0;
+
+  border-top: 1px solid var(--line);
+}
+
+.future-records h2 {
+  max-width: 700px;
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(2.7rem, 5vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.future-records__copy {
+  align-self: end;
+
+  max-width: 600px;
+
+  color: var(--muted-text);
+}
+
+.future-records__copy p:first-child {
+  margin-top: 0;
+}
+
+.future-records__copy p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   CATÁLOGO DE CRIATURAS
+   ========================= */
+
+.creature-catalog {
+  padding: 9rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.creature-catalog__list {
+  border-top: 1px solid var(--line);
+}
+
+.creature-card {
+  display: grid;
+  grid-template-columns:
+    minmax(380px, 1.1fr)
+    minmax(280px, 0.9fr);
+  align-items: center;
+  gap: clamp(3rem, 8vw, 8rem);
+
+  padding: 7rem 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.creature-card:nth-child(even) .creature-card__visual {
+  order: 2;
+}
+
+.creature-card__visual {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  min-height: 520px;
+  padding: 2rem;
+
+  overflow: hidden;
+
+  color: var(--muted-text);
+  border: 1px solid var(--line);
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      color-mix(in srgb, var(--accent), transparent 82%),
+      transparent 35%
+    ),
+    var(--surface);
+
+  text-align: center;
+  text-decoration: none;
+}
+
+.creature-card__visual::before {
+  content: "";
+
+  position: absolute;
+
+  width: 55%;
+  aspect-ratio: 1;
+
+  border: 1px solid var(--line);
+  border-radius: 48% 52% 42% 58%;
+
+  opacity: 0.45;
+  transform: rotate(15deg);
+}
+
+.creature-card__visual span {
+  position: relative;
+  z-index: 1;
+
+  max-width: 260px;
+  padding: 0.8rem 1rem;
+
+  background: var(--surface);
+
+  font-size: 0.8rem;
+}
+
+a.creature-card__visual:hover,
+a.creature-card__visual:focus-visible {
+  border-color: var(--accent);
+}
+
+.creature-card__classification {
+  margin: 0 0 1rem;
+
+  color: var(--accent);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.creature-card h3 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.creature-card h3 a {
+  text-decoration: none;
+}
+
+.creature-card h3 a:hover,
+.creature-card h3 a:focus-visible {
+  color: var(--accent);
+}
+
+.creature-card blockquote {
+  margin: 2.5rem 0;
+  padding-left: 1.5rem;
+
+  border-left: 1px solid var(--accent);
+
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.9rem);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.creature-card__copy > p:not(
+  .creature-card__classification
+) {
+  max-width: 570px;
+  color: var(--muted-text);
+}
+
+.creature-card__copy .text-link {
+  margin-top: 1.5rem;
+}
+
+.creature-card--empty {
+  opacity: 0.55;
+}
+
+
+/* =========================
+   CATÁLOGO RESPONSIVO
+   ========================= */
+
+@media (max-width: 950px) {
+  .creature-card {
+    grid-template-columns: 1fr;
+  }
+
+  .creature-card:nth-child(even) .creature-card__visual {
+    order: initial;
+  }
+
+  .creature-card__visual {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .creature-catalog {
+    padding: 6rem 0;
+  }
+
+  .creature-card {
+    gap: 2.5rem;
+    padding: 5rem 0;
+  }
+
+  .creature-card__visual {
+    min-height: 300px;
+  }
+}
