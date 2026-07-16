@@ -1,1 +1,458 @@
-/* Estilos compartidos por las páginas de categorías y galerías. */
+/* =========================
+   PÁGINAS DE GALERÍA
+   ========================= */
+
+.gallery-page {
+  padding-top: 3rem;
+}
+
+
+/* =========================
+   RUTA DE NAVEGACIÓN
+   ========================= */
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  padding: 1rem 0 3rem;
+
+  color: var(--muted-text);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus-visible {
+  color: var(--accent);
+}
+
+
+/* =========================
+   PRESENTACIÓN DE GALERÍA
+   ========================= */
+
+.gallery-intro {
+  min-height: 75vh;
+  padding: 5rem 0 9rem;
+}
+
+.gallery-intro h1 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 13vw, 11rem);
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+}
+
+.gallery-intro blockquote {
+  max-width: 980px;
+  margin: 5rem 0 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3.8rem);
+  line-height: 1.15;
+}
+
+.gallery-intro blockquote p {
+  margin: 0;
+}
+
+.gallery-intro__description {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+
+  max-width: 900px;
+  margin-top: 4rem;
+
+  color: var(--muted-text);
+}
+
+.gallery-intro__description p {
+  margin: 0;
+}
+
+
+/* =========================
+   ENTRADAS A LOS MUNDOS
+   ========================= */
+
+.world-sections {
+  padding: 9rem 0 3rem;
+  border-top: 1px solid var(--line);
+}
+
+.world-entry {
+  --preview-background: var(--surface);
+  --preview-text: var(--text);
+  --preview-muted: var(--muted-text);
+  --preview-line: var(--line);
+  --preview-accent: var(--accent);
+
+  display: grid;
+  grid-template-columns:
+    minmax(280px, 0.85fr)
+    minmax(380px, 1.15fr);
+  align-items: center;
+  gap: clamp(3rem, 8vw, 8rem);
+
+  padding: 8rem 0;
+
+  border-top: 1px solid var(--line);
+}
+
+.world-entry:nth-of-type(even) .world-entry__copy {
+  order: 2;
+}
+
+.world-entry__number {
+  margin: 0 0 1.5rem;
+
+  color: var(--preview-accent);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.world-entry h3 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+
+.world-entry__copy blockquote {
+  margin: 2.5rem 0;
+  padding-left: 1.5rem;
+
+  border-left: 1px solid var(--preview-accent);
+
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.world-entry__copy > p:not(.world-entry__number) {
+  max-width: 580px;
+
+  color: var(--muted-text);
+}
+
+.world-entry__link {
+  position: relative;
+
+  display: inline-block;
+  width: fit-content;
+  margin-top: 1.5rem;
+  padding-bottom: 0.35rem;
+
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.world-entry__link::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 1px;
+
+  background: var(--preview-accent);
+
+  transform: scaleX(0.25);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.world-entry__link:hover::after,
+.world-entry__link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+
+/* =========================
+   ESPACIOS VISUALES
+   ========================= */
+
+.world-entry__visual {
+  margin: 0;
+
+  color: var(--preview-text);
+}
+
+.world-entry__placeholder {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  min-height: 520px;
+  padding: 2rem;
+
+  overflow: hidden;
+
+  color: var(--preview-muted);
+  border: 1px solid var(--preview-line);
+
+  background-color: var(--preview-background);
+}
+
+.world-entry__placeholder::before,
+.world-entry__placeholder::after {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 130%;
+  height: 1px;
+
+  background: var(--preview-line);
+}
+
+.world-entry__placeholder::before {
+  transform: translate(-50%, -50%) rotate(36deg);
+}
+
+.world-entry__placeholder::after {
+  transform: translate(-50%, -50%) rotate(-36deg);
+}
+
+.world-entry__placeholder span {
+  position: relative;
+  z-index: 1;
+
+  max-width: 280px;
+  padding: 0.8rem 1rem;
+
+  background: var(--preview-background);
+
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.world-entry__visual figcaption {
+  margin-top: 0.8rem;
+
+  color: var(--muted-text);
+
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+
+/* =========================
+   ADELANTOS DE LOS TEMAS
+   ========================= */
+
+.world-entry--horror {
+  --preview-background: #171513;
+  --preview-text: #e7e0d7;
+  --preview-muted: #aaa096;
+  --preview-line: #4d4540;
+  --preview-accent: #a44940;
+}
+
+.world-entry--horror .world-entry__placeholder {
+  background-image:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(164, 73, 64, 0.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 75% 80%,
+      rgba(231, 224, 215, 0.04),
+      transparent 30%
+    );
+}
+
+.world-entry--fantasia {
+  --preview-background: #ded3bc;
+  --preview-text: #26251f;
+  --preview-muted: #686354;
+  --preview-line: #ad9e7f;
+  --preview-accent: #526846;
+}
+
+.world-entry--fantasia .world-entry__placeholder {
+  background-image:
+    radial-gradient(
+      circle at 75% 20%,
+      rgba(82, 104, 70, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 20% 75%,
+      rgba(130, 97, 44, 0.1),
+      transparent 32%
+    );
+}
+
+.world-entry--postapocalipsis {
+  --preview-background: #24271f;
+  --preview-text: #e3dfce;
+  --preview-muted: #aaa58f;
+  --preview-line: #555846;
+  --preview-accent: #d3a837;
+}
+
+.world-entry--postapocalipsis .world-entry__placeholder {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 39px,
+      rgba(211, 168, 55, 0.045) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 39px,
+      rgba(211, 168, 55, 0.035) 40px
+    );
+}
+
+
+/* =========================
+   ENLACE AL CUADERNO
+   ========================= */
+
+.gallery-notebook {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 8vw, 8rem);
+
+  padding: 10rem 0;
+
+  border-top: 1px solid var(--line);
+}
+
+.gallery-notebook h2 {
+  max-width: 700px;
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.gallery-notebook__copy {
+  align-self: end;
+
+  max-width: 600px;
+}
+
+.gallery-notebook__copy p {
+  margin: 0 0 2rem;
+
+  color: var(--muted-text);
+}
+
+
+/* =========================
+   PÁGINA ACTIVA
+   ========================= */
+
+.main-navigation [aria-current="page"] {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.4rem;
+}
+
+
+/* =========================
+   PANTALLAS MEDIANAS
+   ========================= */
+
+@media (max-width: 950px) {
+  .gallery-intro__description {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .world-entry {
+    grid-template-columns: 1fr;
+  }
+
+  .world-entry:nth-of-type(even) .world-entry__copy {
+    order: initial;
+  }
+
+  .world-entry__placeholder {
+    min-height: 420px;
+  }
+
+  .gallery-notebook {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================
+   TELÉFONOS
+   ========================= */
+
+@media (max-width: 640px) {
+  .gallery-page {
+    padding-top: 1rem;
+  }
+
+  .breadcrumb {
+    padding-bottom: 1rem;
+  }
+
+  .gallery-intro {
+    min-height: auto;
+    padding: 4rem 0 6rem;
+  }
+
+  .gallery-intro h1 {
+    font-size: clamp(3.5rem, 20vw, 6rem);
+  }
+
+  .gallery-intro blockquote {
+    margin-top: 3rem;
+  }
+
+  .world-sections {
+    padding-top: 6rem;
+  }
+
+  .world-entry {
+    gap: 2.5rem;
+    padding: 5rem 0;
+  }
+
+  .world-entry__placeholder {
+    min-height: 300px;
+  }
+
+  .gallery-notebook {
+    padding: 6rem 0;
+  }
+}
