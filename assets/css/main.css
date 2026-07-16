@@ -9,7 +9,12 @@
   --muted-text: #68645d;
   --line: #c8c1b5;
   --accent: #8e2923;
+  --page-texture: none; /* Cree una textura de fondo */
 
+  --header-background: rgba(243, 240, 232, 0.94); /* Color del fondo del encabezado */
+  --selection-background: var(--accent);
+  --section-text: #ffffff;
+/* Estas dos lineas cambian el color de selección cuando alguien selecciona con el ratón */
   --content-width: 1280px;
   --reading-width: 760px;
 
@@ -43,10 +48,18 @@ body {
   margin: 0;
 
   color: var(--text);
-  background: var(--background);
+
+  background-color: var(--background);
+  background-image: var(--page-texture);
+  background-attachment: fixed;
 
   font-family: var(--font-body);
   line-height: 1.6;
+}
+
+::selection {
+  color: var(--selection-text);
+  background: var(--selection-background);
 }
 
 img {
@@ -84,7 +97,7 @@ textarea {
 
   border-bottom: 1px solid var(--line);
 
-  background: rgba(243, 240, 232, 0.94);
+  background: var(--header-background);
   backdrop-filter: blur(12px);
 }
 

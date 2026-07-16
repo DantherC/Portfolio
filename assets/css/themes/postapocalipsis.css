@@ -1,0 +1,74 @@
+/* =========================
+   TEMA: POSTAPOCALIPSIS
+   ========================= */
+
+body.theme-postapocalipsis {
+  --background: #1b1d18;
+  --surface: #292c24;
+  --text: #e3dfce;
+  --muted-text: #aaa58f;
+  --line: #555846;
+  --accent: #d3a837;
+
+  --header-background:
+    rgba(27, 29, 24, 0.93);
+
+  --selection-background: #d3a837;
+  --selection-text: #171810;
+
+  --page-texture:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 39px,
+      rgba(211, 168, 55, 0.025) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 39px,
+      rgba(211, 168, 55, 0.018) 40px
+    );
+
+  --font-display:
+    "Arial Narrow",
+    "Roboto Condensed",
+    "Segoe UI",
+    sans-serif;
+
+  color-scheme: dark;
+}
+
+.theme-postapocalipsis .brand-mark {
+  border-radius: 2px;
+  border-style: dashed;
+  transform: rotate(-3deg);
+}
+
+.theme-postapocalipsis .section-label {
+  font-family: var(--font-body);
+  letter-spacing: 0.22em;
+}
+
+.theme-postapocalipsis h1,
+.theme-postapocalipsis h2,
+.theme-postapocalipsis h3 {
+  text-transform: uppercase;
+}
+
+.theme-postapocalipsis .text-link {
+  text-decoration-style: dashed;
+}
+
+.theme-postapocalipsis .project-media {
+  border-style: solid;
+
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent 16px,
+      rgba(211, 168, 55, 0.045) 17px,
+      rgba(211, 168, 55, 0.045) 18px
+    );
+}

@@ -1,0 +1,58 @@
+/* =========================
+   TEMA: FANTASÍA
+   ========================= */
+
+body.theme-fantasia {
+  --background: #eee7d7;
+  --surface: #ded3bc;
+  --text: #26251f;
+  --muted-text: #686354;
+  --line: #b9ab8d;
+  --accent: #526846;
+
+  --header-background:
+    rgba(238, 231, 215, 0.92);
+
+  --selection-background: #526846;
+  --selection-text: #fffdf4;
+
+  --page-texture:
+    radial-gradient(
+      circle at 75% 15%,
+      rgba(126, 102, 54, 0.08),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(69, 100, 67, 0.06),
+      transparent 30%
+    );
+
+  --font-display:
+    Palatino,
+    "Palatino Linotype",
+    Georgia,
+    serif;
+
+  color-scheme: light;
+}
+
+.theme-fantasia .brand-mark {
+  border-radius: 50% 50% 42% 58%;
+  transform: rotate(-4deg);
+}
+
+.theme-fantasia .section-label {
+  font-family: var(--font-display);
+  letter-spacing: 0.18em;
+}
+
+.theme-fantasia .project-origin {
+  border-left-width: 3px;
+  border-left-style: double;
+}
+
+.theme-fantasia .text-link {
+  text-decoration-color:
+    color-mix(in srgb, var(--accent), transparent 35%);
+}

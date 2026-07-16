@@ -1,0 +1,62 @@
+/* =========================
+   TEMA: HORROR
+   ========================= */
+
+body.theme-horror {
+  --background: #121110;
+  --surface: #1d1a18;
+  --text: #e7e0d7;
+  --muted-text: #aaa096;
+  --line: #48413b;
+  --accent: #a44940;
+
+  --header-background:
+    rgba(18, 17, 16, 0.92);
+
+  --selection-background: #a44940;
+  --selection-text: #fff8ef;
+
+  --page-texture:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(141, 72, 61, 0.08),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(235, 218, 195, 0.035),
+      transparent 35%
+    );
+
+  --font-display:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  color-scheme: dark;
+}
+
+.theme-horror .brand-mark {
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+
+.theme-horror .brand-mark > * {
+  transform: rotate(-45deg);
+}
+
+.theme-horror .section-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  letter-spacing: 0.12em;
+}
+
+.theme-horror blockquote {
+  text-shadow:
+    0 0 35px rgba(164, 73, 64, 0.16);
+}
+
+.theme-horror .project-media {
+  box-shadow:
+    inset 0 0 90px rgba(0, 0, 0, 0.4);
+}
